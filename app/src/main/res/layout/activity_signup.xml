@@ -10,6 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:layout_width="190dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="-30dp"
+            android:background="@drawable/ovalshape"
+            android:rotation="50"
+            android:text="">
+
+        </androidx.constraintlayout.utils.widget.MotionLabel>
+
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:layout_width="190dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="-80dp"
+            android:background="@drawable/ovalshape"
+            android:rotation="50"
+            android:text="">
+
+        </androidx.constraintlayout.utils.widget.MotionLabel>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
