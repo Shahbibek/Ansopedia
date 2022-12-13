@@ -61,7 +61,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/__p__sign_in"
                 app:startIconDrawable="@drawable/ic_baseline_email_24"
-
                 >
 
                 <com.google.android.material.textfield.TextInputEditText

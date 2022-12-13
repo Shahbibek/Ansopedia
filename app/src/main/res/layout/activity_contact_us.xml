@@ -37,7 +37,7 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/layout_border">
 
-<!--            &#45;&#45;&#45;&#45;-->
+            <!--            &#45;&#45;&#45;&#45;-->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/address1"
