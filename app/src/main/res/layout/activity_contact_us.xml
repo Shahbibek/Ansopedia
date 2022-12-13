@@ -94,7 +94,6 @@
                 tools:layout_editor_absoluteX="2dp" />
 
 
-
             <LinearLayout
                 android:id="@+id/imgChangeLayout"
                 android:layout_width="match_parent"
