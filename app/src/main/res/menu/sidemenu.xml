@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navhome"
+            android:icon="@drawable/home"
+            android:iconTint="@color/orange"
+            android:title="Home" />
+        <item
+            android:id="@+id/navdashboard"
+            android:icon="@drawable/dashboard"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/course"
+            android:icon="@drawable/course"
+            android:iconTint="@color/orange"
+            android:title="Courses" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="authentication">
+            <menu>
+                <item
+                    android:id="@+id/login"
+                    android:icon="@drawable/login"
+                    android:iconTint="@color/orange"
+                    android:title="Login" />
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/logout"
+                    android:iconTint="@color/orange"
+                    android:title="Logout" />
+            </menu>
+
+        </item>
+    </group>
+    <item android:title="Sharing">
+        <menu>
+            <item
+                android:id="@+id/send"
+                android:icon="@drawable/ic_baseline_send"
+                android:title="Send" />
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/ic_baseline_share"
+                android:title="Share" />
+        </menu>
+    </item>
+</menu>
