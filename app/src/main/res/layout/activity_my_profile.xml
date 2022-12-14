@@ -150,7 +150,7 @@
                     android:background="@drawable/heart_icon" />
 
                 <TextView
-                    android:id="@+id/LeadershipBoard"
+                    android:id="@+id/leadershipBoard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -161,8 +161,34 @@
                     android:textSize="20sp" />
 
 
-            </LinearLayout>
 
+            </LinearLayout><LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/inner_layout_border">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/red_heart" />
+
+                <TextView
+                    android:id="@+id/badges"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/syne"
+                    android:text="Badges"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
