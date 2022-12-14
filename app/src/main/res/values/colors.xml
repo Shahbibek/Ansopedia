@@ -22,6 +22,7 @@
     <color name="oval_color_1">#FF6916</color>
     <color name="oval_color_2">#39FF6A17</color>
 
+    <color name="point_bg">#94BBEB</color>
     <color name="contact_shape">#F55D1C</color>
     <color name="editText_bg">#D9D9D9</color>
     <color name="border_color">#525252</color>

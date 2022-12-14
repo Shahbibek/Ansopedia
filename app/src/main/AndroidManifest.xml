@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.ansopedia">
+    package="com.example.ansopedia" >
 
     <application
         android:allowBackup="true"
@@ -12,13 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ansopedia"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".CategoryDetailsActivity"
+            android:name=".LeaderboardActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.Ansopedia"
+            android:name=".MyProfileActivity"
             android:exported="false" />
         <activity
             android:name=".AboutTestActivity"
@@ -54,7 +53,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            >
+            android:theme="@style/Theme.Ansopedia.Starting" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
