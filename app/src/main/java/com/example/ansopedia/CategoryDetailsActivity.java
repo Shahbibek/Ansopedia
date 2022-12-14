@@ -2,13 +2,16 @@ package com.example.ansopedia;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import com.example.ansopedia.adapters.CategoryDetailsAdapter;
-import com.example.ansopedia.databinding.ActivityCategoryDetailsBinding;
+//import com.example.ansopedia.databinding.ActivityCategoryDetailsBinding;
 import com.example.ansopedia.models.CategoryDetailsModel;
 
 import java.util.ArrayList;
@@ -17,16 +20,24 @@ public class CategoryDetailsActivity extends AppCompatActivity {
 
     private CategoryDetailsAdapter adapter;
     private ArrayList<CategoryDetailsModel> arrayList;
-    ActivityCategoryDetailsBinding binding;
+
+
+    private DrawerLayout drawerLayout;
+    private Toolbar toolbar;
+    private RecyclerView topicLists;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityCategoryDetailsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_category_details);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerlayout,binding.toolbar,R.string.navigation_open,R.string.navigation_close);
+        drawerLayout = findViewById(R.id.drawerlayout);
+        toolbar = findViewById(R.id.toolbar);
+        topicLists = findViewById(R.id.topiclists);
 
-        binding.drawerlayout.addDrawerListener(toggle);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
+
+        drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
 
@@ -49,8 +60,8 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         arrayList.add(new CategoryDetailsModel("Operator",4));
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
-        binding.topiclists.setLayoutManager(layoutManager);
-        binding.topiclists.setAdapter(adapter);
+        topicLists.setLayoutManager(layoutManager);
+        topicLists.setAdapter(adapter);
     }
 
 }

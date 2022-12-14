@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MyProfileActivity">
     <RelativeLayout
         android:id="@+id/rlMan"
         android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
                     android:fontFamily="@font/syne"
-                    android:text="Leadership Board"
+                    android:text="Leaderboard"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -278,6 +278,7 @@
                 android:layout_marginHorizontal="20dp"/>
 
             <LinearLayout
+                android:id="@+id/llEditSetting"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="15dp"

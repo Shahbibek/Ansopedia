@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_below="@+id/Leaderboard_heading"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center">
 
                 <LinearLayout
@@ -272,7 +272,7 @@
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="4."
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -283,9 +283,9 @@
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="8dp"
                     android:src="@drawable/amit"
+                    app:shapeAppearanceOverlay="@style/rank4imageview"
                     app:strokeColor="@color/contact_shape"
-                    app:strokeWidth="2px"
-                    app:shapeAppearanceOverlay="@style/rank4imageview" />
+                    app:strokeWidth="2px" />
 
                 <TextView
                     android:id="@+id/userFname_4"

@@ -104,6 +104,8 @@ public class SharedPrefManager {
             public void onFailure(Call<Boolean> call, Throwable t) {
                 editor.clear();
                 editor.apply();
+                mCtx.startActivity(new Intent(mCtx, SignInActivity.class));
+                ((Activity) mCtx).finish();
             }
         });
 
