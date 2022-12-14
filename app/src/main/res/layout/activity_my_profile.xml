@@ -115,11 +115,11 @@
                 android:background="@drawable/inner_layout_border">
 
                 <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/order_icon" />
+                    android:background="@drawable/history_icon" />
 
                 <TextView
                     android:id="@+id/history"
@@ -142,11 +142,11 @@
                 android:background="@drawable/inner_layout_border">
 
                 <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/heart_icon" />
+                    android:background="@drawable/leaderboard_icon" />
 
                 <TextView
                     android:id="@+id/leadershipBoard"
@@ -173,7 +173,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/red_heart" />
+                    android:background="@drawable/badge_icon" />
 
                 <TextView
                     android:id="@+id/badges"
@@ -201,7 +201,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/helpcenter_icon" />
+                    android:background="@drawable/note_icon" />
 
                 <TextView
                     android:id="@+id/notes"
@@ -256,7 +256,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/profile" />
+                    android:background="@drawable/edit_profile_icon" />
 
                 <TextView
                     android:id="@+id/editProfile"
@@ -289,7 +289,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/location" />
+                    android:background="@drawable/setting_icon" />
 
                 <TextView
                     android:id="@+id/editSetting"

@@ -16,7 +16,6 @@
         android:id="@+id/navigationview"
         app:headerLayout="@layout/headerfile"
         app:menu="@menu/sidemenu"
-        android:visibility="gone"
         android:layout_gravity="start"/>
     <RelativeLayout
         android:layout_width="match_parent"
