@@ -59,7 +59,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginVertical="10dp"
-                android:src="@drawable/shikat"
+                android:src="@drawable/profile_pic_circle"
                 app:shapeAppearanceOverlay="@style/roundimageview" />
 
             <ImageView
