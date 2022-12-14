@@ -1,5 +1,6 @@
 package com.example.ansopedia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,8 +9,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,6 +25,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.ansopedia.Model.SharedPrefManager;
 import com.example.ansopedia.adapters.CategoryAdapter;
 import com.example.ansopedia.adapters.TabsAdapter;
 import com.example.ansopedia.databinding.ActivityMainBinding;
@@ -58,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
         binding.drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
+        binding.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPrefManager.getInstance(getApplicationContext()).logout();
+            }
+        });
         initSlider();
         intitCategories();
         intitSubjects();
@@ -84,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80","Try Now"));
         binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80","Try Now"));
         binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80","Try Now"));
+        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1939&q=80","Try Now"));
 
     }
 
@@ -91,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
         categorieslist = new ArrayList<>();
         categoryAdapter = new CategoryAdapter(this,categorieslist);
 
+
+        categorieslist.add(new CategoriesModel("Java","https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.subpng.com%2Fpng-97d0au%2F&psig=AOvVaw2JdvGx8n88sstjL3vSjIws&ust=1671128462601000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCND5z-Tc-fsCFQAAAAAdAAAAABAK","#ffffff","good",1));
         getCategories();
         GridLayoutManager layoutManager = new GridLayoutManager(this,3);
         binding.categoriesList.setLayoutManager(layoutManager);

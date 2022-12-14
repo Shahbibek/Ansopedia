@@ -5,46 +5,26 @@
 
         <item
             android:id="@+id/navhome"
-            android:icon="@drawable/home"
+            android:icon="@drawable/dr_home"
             android:iconTint="@color/orange"
             android:title="Home" />
         <item
             android:id="@+id/navprofile"
-            android:icon="@drawable/dashboard"
+            android:icon="@drawable/dr_profile_icon"
             android:title="Profile" />
         <item
             android:id="@+id/course"
-            android:icon="@drawable/course"
+            android:icon="@drawable/dr_course"
             android:iconTint="@color/orange"
             android:title="Courses" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/dr_logout"
+            android:iconTint="@color/orange"
+            android:title="Logout" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/dr_share"
+            android:title="Share" />
     </group>
-    <group android:checkableBehavior="single">
-        <item android:title="authentication">
-            <menu>
-                <item
-                    android:id="@+id/login"
-                    android:icon="@drawable/login"
-                    android:iconTint="@color/orange"
-                    android:title="Login" />
-                <item
-                    android:id="@+id/logout"
-                    android:icon="@drawable/logout"
-                    android:iconTint="@color/orange"
-                    android:title="Logout" />
-            </menu>
-
-        </item>
-    </group>
-    <item android:title="Sharing">
-        <menu>
-            <item
-                android:id="@+id/send"
-                android:icon="@drawable/ic_baseline_send"
-                android:title="Send" />
-            <item
-                android:id="@+id/share"
-                android:icon="@drawable/ic_baseline_share"
-                android:title="Share" />
-        </menu>
-    </item>
 </menu>

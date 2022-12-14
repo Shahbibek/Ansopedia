@@ -8,19 +8,21 @@
         android:id="@+id/catcard"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="15dp"
         android:layout_margin="10dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/orange"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        android:backgroundTint="@color/orange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/caticon"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
             android:layout_height="match_parent"
-            android:src="@drawable/javalogo"/>
+            android:layout_margin="10dp"
+            android:src="@drawable/javalogo" />
 
     </androidx.cardview.widget.CardView>
 

@@ -101,7 +101,7 @@
                     android:gravity="center"
                     android:text="Whether you have a question, suggestion, or need any solution, our team is ready to help you."
                     android:textColor="#3F3F3F"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputEditText

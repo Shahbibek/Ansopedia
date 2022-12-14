@@ -79,7 +79,7 @@
                     app:showNavigationButtons="false"
                     app:autoPlay="true"
                     app:showCaption="false"
-                    android:layout_height="150dp" />
+                    android:layout_height="200dp" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardviee"
