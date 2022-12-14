@@ -51,55 +51,55 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/t1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:errorContentDescription="invalid email"-->
+<!--                app:errorEnabled="true"-->
+
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/__p__sign_in"-->
+<!--                app:startIconDrawable="@drawable/ic_baseline_person_24">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/userFirstNames"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="44dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="#D9D9D9"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:hint="Frist Name"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    android:padding="20dp"-->
+<!--                    android:textColorHint="@color/lightWhite"-->
+<!--                    android:textSize="24sp"-->
+<!--                    tools:layout_editor_absoluteX="2dp"-->
+
+<!--                    />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/t1"
+                android:id="@+id/userNameTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorContentDescription="invalid email"
                 app:errorEnabled="true"
-
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/__p__sign_in"
-                app:startIconDrawable="@drawable/ic_baseline_person_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/userFirstNames"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="44dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="#D9D9D9"
-                    android:drawablePadding="20dp"
-                    android:hint="Frist Name"
-                    android:inputType="textPersonName"
-                    android:padding="20dp"
-                    android:textColorHint="@color/lightWhite"
-                    android:textSize="24sp"
-                    tools:layout_editor_absoluteX="2dp"
-
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/t2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorContentDescription="invalid email"
-                app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/t1"
                 app:startIconDrawable="@drawable/ic_baseline_person_24"
 
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/userLastName"
+                    android:id="@+id/userName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -107,7 +107,7 @@
                     android:layout_marginEnd="20dp"
                     android:background="#D9D9D9"
                     android:drawablePadding="20dp"
-                    android:hint="Last Name"
+                    android:hint="Username"
                     android:inputType="textPersonName"
                     android:padding="20dp"
                     android:textColorHint="@color/lightWhite"
@@ -127,7 +127,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/t2"
+                app:layout_constraintTop_toBottomOf="@+id/userNameTextField"
                 app:startIconDrawable="@drawable/ic_baseline_email_24"
 
                 >
@@ -203,7 +203,7 @@
             <!--        app:layout_constraintTop_toBottomOf="@+id/userEmail"-->
             <!--        tools:layout_editor_absoluteX="2dp" />-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/t4"
+                android:id="@+id/passwordTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorContentDescription="invalid password"
@@ -233,7 +233,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/t5"
+                android:id="@+id/confirmPasswordTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorContentDescription="invalid password"
@@ -241,7 +241,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/t4"
+                app:layout_constraintTop_toBottomOf="@+id/passwordTextField"
                 app:passwordToggleEnabled="true"
                 app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
@@ -274,7 +274,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/t5" />
+                app:layout_constraintTop_toBottomOf="@+id/confirmPasswordTextField" />
 
             <LinearLayout
                 android:layout_width="match_parent"
