@@ -59,10 +59,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginVertical="10dp"
-                android:src="@drawable/shikat"
+                android:src="@drawable/profile_pic_circle"
                 app:shapeAppearanceOverlay="@style/roundimageview" />
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <ImageView
                 android:id="@+id/badge_img"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
