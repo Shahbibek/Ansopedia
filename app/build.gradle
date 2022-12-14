@@ -21,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures{
+        viewBinding true
+        
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -31,16 +35,33 @@ dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.gms:play-services-base:18.1.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.google.android.material:material:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     //Splash Screen
     implementation 'androidx.core:core-splashscreen:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.8'
+
+    //extra library
+    implementation 'com.github.bumptech.glide:glide:4.13.2' //this is for extracting online picture
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+
+    //for slider
+    // Material Components for Android. Replace the version with the latest version of Material Components library.
+
+    //for apis
+    implementation 'com.android.volley:volley:1.2.1'
+
+
+//    carousel
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+
 }

@@ -2,4 +2,7 @@
     <string name="app_name">Ansopedia</string>
     <string name="__p__sign_in_string">SIGN IN</string>
     <string name="__p__sign_up_string">SIGN UP</string>
+
+    <string name="navigation_open">Open Navigation drawer</string>
+    <string name="navigation_close">Close Navigation drawer</string>
 </resources>
