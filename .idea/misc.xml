@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.175" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable/button_background.xml" value="0.175" />
+        <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable/desc_point_bg.xml" value="0.179" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.175" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.175" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.175" />
@@ -35,6 +36,7 @@
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/layout/activity_main.xml" value="0.2708333333333333" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/layout/activity_my_profile.xml" value="0.2708333333333333" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/layout/activity_password_reset_successful.xml" value="0.2708333333333333" />
+        <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/layout/activity_quiz.xml" value="0.2708333333333333" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/layout/activity_sign_in.xml" value="0.2708333333333333" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/layout/activity_signup.xml" value="0.2708333333333333" />
         <entry key="..\:/SEM VI-RKU/Appicorn/Ansopedia/app/src/main/res/layout/activity_enter_otpactivity.xml" value="0.1" />
