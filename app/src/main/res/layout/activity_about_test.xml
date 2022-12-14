@@ -46,7 +46,7 @@
 
 
         <LinearLayout
-            android:id="@+id/edit_address"
+            android:id="@+id/aboutTest_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/header_title"
@@ -54,23 +54,36 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:background="#DCDCDC"
+            android:background="@drawable/about_test_bg"
             android:orientation="vertical">
 
+
+            <TextView
+                android:id="@+id/aboutTest_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="About Test"
+                android:textAlignment="center"
+                android:textColor="@color/editText_bg"
+                android:textSize="22dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/addHeading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_below="@+id/aboutTest_heading"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="verdana"
-                android:text="About Test"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="22dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Quiz of JAVA Programming"
+                android:textAlignment="center"
+                android:textColor="#171717"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -80,7 +93,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edit_address"
+            android:layout_below="@+id/aboutTest_container"
             android:layout_alignParentBottom="true"
             android:layout_marginVertical="20dp"
             android:layout_marginBottom="10dp"

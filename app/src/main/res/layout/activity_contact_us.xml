@@ -63,7 +63,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imgChangeLayout"
                 android:fontFamily="@font/syne"
-                android:gravity="start"
                 android:padding="0.5dp"
                 android:text="Whether you have a question, suggestion, or
                 need any solution, our team is ready to help
@@ -98,7 +97,6 @@
                 android:id="@+id/imgChangeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/addHeading"
                 android:layout_marginTop="14dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
@@ -117,11 +115,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imgChangeLayout"
-                    android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp"
-                    android:fontFamily="@font/syne"
-                    android:gravity="start"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="We'd love to hear from you"
+                    android:textAlignment="center"
                     android:textColor="#171717"
                     android:textSize="25sp"
                     android:textStyle="bold" />
