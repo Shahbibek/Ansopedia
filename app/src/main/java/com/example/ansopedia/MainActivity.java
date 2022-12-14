@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -71,12 +72,31 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navhome:
-                        Intent intent = new Intent(MainActivity.this,MainActivity.class);
-                        startActivity(intent);
+                        Toast.makeText(MainActivity.this, "clicked...", Toast.LENGTH_SHORT).show();
                         break;
-
+                    case R.id.navdashboard:
+                        Toast.makeText(MainActivity.this, "clicked navdashboard....", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.course:
+                        Toast.makeText(MainActivity.this, "clicked on course...", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.login:
+                        Toast.makeText(MainActivity.this, "clicked on login...", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                        SharedPrefManager.getInstance(getApplicationContext()).logout();
+                        break;
+                    case R.id.send:
+                        Toast.makeText(MainActivity.this, "clicked on send...", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.share:
+                        Toast.makeText(MainActivity.this, "clicked on share...", Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        return true;
                 }
-                return false;
+                return true;
             }
         });
         initSlider();
