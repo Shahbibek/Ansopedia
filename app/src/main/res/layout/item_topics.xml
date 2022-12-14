@@ -10,11 +10,13 @@
         android:id="@+id/cardviee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        android:backgroundTint="#C5C1BF"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="10dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -31,6 +33,7 @@
             android:id="@+id/checkedImg"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:visibility="gone"
             android:src="@drawable/ic_baseline_correct"
             android:layout_gravity="right"
             android:layout_marginRight="30dp"

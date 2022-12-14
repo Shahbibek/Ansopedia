@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private TabsAdapter tabsAdapter;
     private ArrayList<TabsModel> tabsModelArrayList;
 
+
+
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
