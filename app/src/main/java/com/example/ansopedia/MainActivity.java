@@ -1,5 +1,6 @@
 package com.example.ansopedia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,7 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.WindowManager;
 
 import com.android.volley.Request;
@@ -19,6 +22,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.ansopedia.Model.SharedPrefManager;
 import com.example.ansopedia.adapters.CategoryAdapter;
 import com.example.ansopedia.adapters.TabsAdapter;
 import com.example.ansopedia.databinding.ActivityMainBinding;
@@ -50,12 +54,31 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            startActivity(new Intent(this, SignInActivity.class));
+            finish();
+        }
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerlayout,binding.toolbar,R.string.navigation_open,R.string.navigation_close);
 
         binding.drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
+//        when user cliks on any item on navigation bar
+        binding.navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navhome:
+                        Intent intent = new Intent(MainActivity.this,MainActivity.class);
+                        startActivity(intent);
+                        break;
+
+                }
+                return false;
+            }
+        });
         initSlider();
         intitCategories();
         intitSubjects();
