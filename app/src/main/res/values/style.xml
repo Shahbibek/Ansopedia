@@ -14,4 +14,10 @@
         <item name="strokeWidth">2dp</item>
     </style>
 
+    <style name="rankimageview" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">45dp</item>
+        <item name="color">@color/black</item>
+    </style>
+
 </resources>
