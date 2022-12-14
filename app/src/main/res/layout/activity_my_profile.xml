@@ -39,7 +39,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="verdana"
-            android:gravity="center"
+            android:textAlignment="center"
             android:text="My Profile"
             android:textColor="@color/cardview_dark_background"
             android:textSize="30sp"
@@ -62,17 +62,25 @@
                 android:src="@drawable/shikat"
                 app:shapeAppearanceOverlay="@style/roundimageview" />
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/badge_img"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="-25dp"
+                android:src="@drawable/red_heart" />
+
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:fontFamily="@font/poppins_bold"
-                android:textAlignment="center"
                 android:text="User's Name"
+                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/userEmail"
                 android:layout_width="match_parent"
@@ -114,7 +122,7 @@
                     android:background="@drawable/order_icon" />
 
                 <TextView
-                    android:id="@+id/orders"
+                    android:id="@+id/history"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -142,7 +150,7 @@
                     android:background="@drawable/heart_icon" />
 
                 <TextView
-                    android:id="@+id/favoriteList"
+                    android:id="@+id/LeadershipBoard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -171,13 +179,13 @@
                     android:background="@drawable/helpcenter_icon" />
 
                 <TextView
-                    android:id="@+id/helpCenter"
+                    android:id="@+id/notes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
                     android:fontFamily="@font/syne"
-                    android:text="Help Center"
+                    android:text="Notes"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -258,13 +266,13 @@
                     android:background="@drawable/location" />
 
                 <TextView
-                    android:id="@+id/editAddress"
+                    android:id="@+id/editSetting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="10dp"
                     android:fontFamily="@font/syne"
-                    android:text="Saved Address"
+                    android:text="Setting"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
