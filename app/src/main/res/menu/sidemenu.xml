@@ -9,9 +9,9 @@
             android:iconTint="@color/orange"
             android:title="Home" />
         <item
-            android:id="@+id/navdashboard"
+            android:id="@+id/navprofile"
             android:icon="@drawable/dashboard"
-            android:title="Dashboard" />
+            android:title="Profile" />
         <item
             android:id="@+id/course"
             android:icon="@drawable/course"
