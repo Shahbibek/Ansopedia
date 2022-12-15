@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         initSlider();
         intitCategories();
         intitSubjects();
+
+        //when user clicks on about us button
+
     }
 
     private void intitSubjects() {
