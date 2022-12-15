@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.ansopedia.adapters.CategoryDetailsAdapter;
 //import com.example.ansopedia.databinding.ActivityCategoryDetailsBinding;
@@ -26,6 +28,8 @@ public class CategoryDetailsActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView topicLists;
 
+    private ImageView backarrow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,7 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerlayout);
         toolbar = findViewById(R.id.toolbar);
         topicLists = findViewById(R.id.topiclists);
+        backarrow = findViewById(R.id.backarrow);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
 
@@ -46,6 +51,14 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         String color = getIntent().getStringExtra("color");
         String desc = getIntent().getStringExtra("desc");
         String id = getIntent().getStringExtra("id");
+
+//        when user clicks on back arrow button
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         initTopics();
     }
