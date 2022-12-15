@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,6 +28,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.ansopedia.adapters.CategoryAdapter;
 import com.example.ansopedia.adapters.TabsAdapter;
 import com.example.ansopedia.databinding.ActivityMainBinding;
+import com.example.ansopedia.fragments.AboutUsFragment;
 import com.example.ansopedia.models.CategoriesModel;
 import com.example.ansopedia.models.TabsModel;
 import com.example.ansopedia.utils.Constants;
@@ -40,13 +43,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity {
 
     private CategoryAdapter categoryAdapter;
     private ArrayList<CategoriesModel> categorieslist;
 
     private TabsAdapter tabsAdapter;
     private ArrayList<TabsModel> tabsModelArrayList;
+
 
     ActivityMainBinding binding;
     @Override
@@ -58,18 +62,52 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerlayout,binding.toolbar,R.string.navigation_open,R.string.navigation_close);
 
-        binding.drawerlayout.setDrawerListener(toggle);
+//        binding.drawerlayout.setDrawerListener(toggle);
+        binding.drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
 
 //        NavigationView navigationView1 = findViewById(R.id.navigationview);
 
-        binding.navigationview.setNavigationItemSelectedListener(this);
+//        binding.navigationview.setNavigationItemSelectedListener();
 
         initSlider();
         intitCategories();
         intitSubjects();
 
-        //when user clicks on about us button
+        binding.navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.navhome:
+                        Toast.makeText(getApplicationContext(), "Home clicked...", Toast.LENGTH_LONG).show();
+                        binding.drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.navprofile:
+                        Toast.makeText(getApplicationContext(), "Home clicked...", Toast.LENGTH_LONG).show();
+                        binding.drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.course:
+                        Toast.makeText(getApplicationContext(), "Home clicked...", Toast.LENGTH_LONG).show();
+                        binding.drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(getApplicationContext(), "Home clicked...", Toast.LENGTH_LONG).show();
+                        binding.drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.share:
+                        Toast.makeText(getApplicationContext(), "Home clicked...", Toast.LENGTH_LONG).show();
+                        binding.drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.aboutus:
+                        Toast.makeText(getApplicationContext(), "Home clicked...", Toast.LENGTH_LONG).show();
+                        binding.drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                }
+                return true;
+            }
+        });
 
     }
 
@@ -149,30 +187,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-
+    //    when clicked on back button make sure that activity is not gone to back state if navigation drawer is open
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        item.setChecked(true);
-        switch (item.getItemId()){
-            case R.id.navhome:
-                Toast.makeText(this, "clicked on home", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.navprofile:
-                Toast.makeText(this, "clicked on profile", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.course:
-                Toast.makeText(this, "courses", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.logout:
-                Toast.makeText(this, "clicked on logout...", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.share:
-                Toast.makeText(this, "clicked on share...", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                Toast.makeText(this, "wrong option...", Toast.LENGTH_SHORT).show();
-                break;
+    public void onBackPressed() {
+        if(binding.drawerlayout.isDrawerOpen(GravityCompat.START)){
+            binding.drawerlayout.closeDrawer(GravityCompat.START);
         }
-        return true;
+        else {
+            super.onBackPressed();
+        }
     }
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+////        item.setChecked(true);
+//        binding.framelayout.setVisibility(View.VISIBLE);
+//        switch (item.getItemId()){
+//            case R.id.navhome:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new AboutUsFragment()).commit();
+////                Toast.makeText(this, "clicked on home", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.navprofile:
+//                Toast.makeText(this, "clicked on profile", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.course:
+//                Toast.makeText(this, "courses", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.logout:
+//                Toast.makeText(this, "clicked on logout...", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.share:
+//                Toast.makeText(this, "clicked on share...", Toast.LENGTH_SHORT).show();
+//                break;
+//            default:
+//                Toast.makeText(this, "wrong option...", Toast.LENGTH_SHORT).show();
+//                break;
+//        }
+//        return true;
+//    }
 }

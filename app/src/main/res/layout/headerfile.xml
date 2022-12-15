@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:background="@color/orange"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:padding="20dp"
     android:orientation="vertical">
 

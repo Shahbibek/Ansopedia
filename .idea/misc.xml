@@ -14,10 +14,22 @@
         <entry key="..\:/Hackathon/Ansopedia/app/src/main/res/layout/item_tabs.xml" value="0.22826086956521738" />
         <entry key="..\:/Hackathon/Ansopedia/app/src/main/res/layout/item_topics.xml" value="0.22826086956521738" />
         <entry key="..\:/Hackathon/Ansopedia/app/src/main/res/menu/sidemenu.xml" value="0.25" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/drawable/bg_profile.xml" value="0.116" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/drawable/bg_profileitems.xml" value="0.116" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/drawable/bg_userprofile.xml" value="0.116" />
         <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/activity_about_us.xml" value="0.22826086956521738" />
         <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/activity_category_details.xml" value="0.25" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/activity_leaderboard.xml" value="0.22826086956521738" />
         <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/fragment_aboutus.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/fragment_courses.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/fragment_message.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/headerfile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/item_tabs.xml" value="0.25" />
+        <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/layout/item_topics.xml" value="0.25" />
         <entry key="..\:/Hackathon/amit/Ansopedia/app/src/main/res/menu/sidemenu.xml" value="0.24615384615384617" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.175" />
         <entry key="..\:/RK University/Ansopedia App/Git project/Ansopedia/app/src/main/res/drawable/button_background.xml" value="0.175" />
