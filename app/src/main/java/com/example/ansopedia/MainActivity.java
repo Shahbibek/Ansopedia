@@ -1,15 +1,19 @@
 package com.example.ansopedia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.helper.widget.Carousel;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,6 +29,7 @@ import com.example.ansopedia.databinding.ActivityMainBinding;
 import com.example.ansopedia.models.CategoriesModel;
 import com.example.ansopedia.models.TabsModel;
 import com.example.ansopedia.utils.Constants;
+import com.google.android.material.internal.NavigationMenuItemView;
 import com.google.android.material.navigation.NavigationView;
 
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
@@ -35,7 +40,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private CategoryAdapter categoryAdapter;
     private ArrayList<CategoriesModel> categorieslist;
@@ -53,8 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerlayout,binding.toolbar,R.string.navigation_open,R.string.navigation_close);
 
-        binding.drawerlayout.addDrawerListener(toggle);
+        binding.drawerlayout.setDrawerListener(toggle);
         toggle.syncState();
+
+//        NavigationView navigationView1 = findViewById(R.id.navigationview);
+
+        binding.navigationview.setNavigationItemSelectedListener(this);
 
         initSlider();
         intitCategories();
@@ -132,5 +141,35 @@ public class MainActivity extends AppCompatActivity {
         });
         queue.add(request);
 
+    }
+
+
+
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        item.setChecked(true);
+        switch (item.getItemId()){
+            case R.id.navhome:
+                Toast.makeText(this, "clicked on home", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.navprofile:
+                Toast.makeText(this, "clicked on profile", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.course:
+                Toast.makeText(this, "courses", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.logout:
+                Toast.makeText(this, "clicked on logout...", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.share:
+                Toast.makeText(this, "clicked on share...", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                Toast.makeText(this, "wrong option...", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 }
