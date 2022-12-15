@@ -64,34 +64,47 @@
 
             <ImageView
                 android:id="@+id/badge_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-40dp"
+                android:src="@drawable/bronze_badge" />
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginTop="-25dp"
-                android:src="@drawable/red_heart" />
-
-            <TextView
-                android:id="@+id/userName"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="User's Name"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:layout_gravity="right"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/profile_bg"
+                >
 
-            <TextView
-                android:id="@+id/userEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="bshah@gmail.com"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="User's Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userName"
+                    android:layout_marginHorizontal="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="example@gmail.com"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 
@@ -115,11 +128,11 @@
                 android:background="@drawable/inner_layout_border">
 
                 <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/order_icon" />
+                    android:background="@drawable/history_icon" />
 
                 <TextView
                     android:id="@+id/history"
@@ -142,11 +155,11 @@
                 android:background="@drawable/inner_layout_border">
 
                 <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/heart_icon" />
+                    android:background="@drawable/leaderboard_icon" />
 
                 <TextView
                     android:id="@+id/leadershipBoard"
@@ -173,7 +186,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/red_heart" />
+                    android:background="@drawable/badge_icon" />
 
                 <TextView
                     android:id="@+id/badges"
@@ -201,7 +214,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/helpcenter_icon" />
+                    android:background="@drawable/note_icon" />
 
                 <TextView
                     android:id="@+id/notes"
@@ -256,7 +269,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/profile" />
+                    android:background="@drawable/edit_profile_icon" />
 
                 <TextView
                     android:id="@+id/editProfile"
@@ -289,7 +302,7 @@
                     android:layout_height="24dp"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/location" />
+                    android:background="@drawable/setting_icon" />
 
                 <TextView
                     android:id="@+id/editSetting"

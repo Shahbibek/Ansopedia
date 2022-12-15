@@ -43,6 +43,29 @@
                 app:titleTextColor="@color/white"
                 tools:ignore="MissingConstraints" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/about_test_bg"
+                android:layout_marginHorizontal="20dp">
+            <TextView
+                android:id="@+id/Leaderboard_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Topics"
+                android:textAlignment="center"
+                android:textColor="@color/editText_bg"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
@@ -58,9 +81,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:layout_marginBottom="15dp"
                     tools:listitem="@layout/item_topics" />
 
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         </LinearLayout>
 
