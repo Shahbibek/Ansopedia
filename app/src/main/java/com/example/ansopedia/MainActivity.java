@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.ansopedia.Model.SharedPrefManager;
 import com.example.ansopedia.adapters.CategoryAdapter;
 import com.example.ansopedia.adapters.TabsAdapter;
 import com.example.ansopedia.databinding.ActivityMainBinding;
@@ -43,16 +45,22 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     private CategoryAdapter categoryAdapter;
-    private ArrayList<CategoriesModel> categorieslist;
+    private List<CategoriesModel> categorieslist;
 
     private TabsAdapter tabsAdapter;
     private ArrayList<TabsModel> tabsModelArrayList;
 
 
     ActivityMainBinding binding;
+    private String baseUrl = "https://api.ansopedia.com/api/content/getCategory.php/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
 
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            startActivity(new Intent(this, SignInActivity.class));
+            finish();
+        }
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerlayout,binding.toolbar,R.string.navigation_open,R.string.navigation_close);
 
 //        binding.drawerlayout.setDrawerListener(toggle);
@@ -69,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationView navigationView1 = findViewById(R.id.navigationview);
 
 //        binding.navigationview.setNavigationItemSelectedListener();
+
 
         initSlider();
         intitCategories();
@@ -137,28 +150,85 @@ public class MainActivity extends AppCompatActivity {
 
     private void intitCategories() {
         categorieslist = new ArrayList<>();
-        categoryAdapter = new CategoryAdapter(this,categorieslist);
 
         getCategories();
+        categoryAdapter = new CategoryAdapter(this,categorieslist);
         GridLayoutManager layoutManager = new GridLayoutManager(this,3);
         binding.categoriesList.setLayoutManager(layoutManager);
         binding.categoriesList.setAdapter(categoryAdapter);
     }
 
+
+//   private void getCategories() {
+//         Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
+//
+//        MyApi api = retrofit.create(MyApi.class);
+//        Call<List<CategoriesModel>> call = api.getModels();
+//
+//
+//        call.enqueue(new Callback<List<CategoriesModel>>() {
+//            @Override
+//            public void onResponse(Call<List<CategoriesModel>> call, Response<List<CategoriesModel>> response) {
+//                categorieslist = response.body();
+//
+//                for (int i = 0; i < categorieslist.size(); i++){
+//
+//                    CategoriesModel categoriesModel = new CategoriesModel(
+//                            categorieslist.get(i).getName(),
+//                            categorieslist.get(i).getName(),
+//                            categorieslist.get(i).getDesc(),
+//                            categorieslist.get(i).getId()
+//                    );
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<CategoriesModel>> call, Throwable t) {
+//                Toast.makeText(MainActivity.this, "Not able to fetch data...", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//
+//    }
+
+
+    //this is previous code
+//    it will work fine but api used is different
+
     private void getCategories() {
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL, new Response.Listener<String>() {
+//        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                try {
+//
+//                    //}
+////                    else{
+////
+////                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//            }
+//        });
+        StringRequest  request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject mainObj = new JSONObject(response);
                     // if(mainObj.getString("status").equals("success")){
                     JSONArray jsonArray = mainObj.getJSONArray("categories");
-                    for (int i = 0;i<jsonArray.length();i++){
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject object = jsonArray.getJSONObject(i);
                         CategoriesModel category = new CategoriesModel(
                                 object.getString("name"),
-                                Constants.CATEGORIES_IMAGE_URL+ object.getString("icon"),
+                                Constants.CATEGORIES_IMAGE_URL + object.getString("icon"),
                                 object.getString("color"),
                                 object.getString("brief"),
                                 object.getInt("id")
@@ -166,10 +236,6 @@ public class MainActivity extends AppCompatActivity {
                         categorieslist.add(category);
                     }
                     categoryAdapter.notifyDataSetChanged();
-                    //}
-//                    else{
-//
-//                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -225,3 +291,5 @@ public class MainActivity extends AppCompatActivity {
 //        return true;
 //    }
 }
+
+

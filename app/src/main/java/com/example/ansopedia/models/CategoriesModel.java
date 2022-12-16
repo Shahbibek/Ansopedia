@@ -7,6 +7,12 @@ public class CategoriesModel {
     public CategoriesModel(){
 
     }
+    public CategoriesModel(String name,String color,String desc,int id){
+        this.name = name;
+        this.color = color;
+        this.desc = desc;
+        this.id = id;
+    }
     public CategoriesModel(String name, String icon, String color, String desc, int id) {
         this.name = name;
         this.icon = icon;

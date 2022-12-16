@@ -149,8 +149,8 @@ public class SignInActivity extends AppCompatActivity {
                             userJson.getString("isVerified"),
                             userJson.getString("firstName"),
                             userJson.getString("lastName"),
-                            userJson.getString("middleName"),
-                            userJson.getString("dob")
+                            userJson.getString("middleName")
+
                         );
 //
 //                        //storing the user in shared preferences
