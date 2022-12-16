@@ -34,12 +34,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ansopedia_logo"
+                android:layout_marginTop="70dp"
+                app:layout_constraintBottom_toTopOf="@+id/__p__sign_in"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/__p__sign_in"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="92dp"
+                android:layout_marginTop="220dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/__p__sign_in_string"
                 android:textColor="@color/__p__sign_in_color"
@@ -60,8 +69,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/__p__sign_in"
-                app:startIconDrawable="@drawable/ic_baseline_email_24"
-                >
+                app:startIconDrawable="@drawable/ic_baseline_email_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/userEmail"
@@ -143,7 +151,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginbtn"
                 style="@style/Button1"
-                android:layout_width="200dp"
+                android:layout_width="260dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:text="SIGN IN"
@@ -205,8 +213,8 @@
 
                 <com.google.android.gms.common.SignInButton
                     android:id="@+id/sign_in_button"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
+                    android:layout_width="260dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@color/black"
                     android:backgroundTint="@color/black" />
