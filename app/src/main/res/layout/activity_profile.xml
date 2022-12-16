@@ -16,8 +16,8 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:id="@+id/navigationview"
+        android:visibility="gone"
         app:headerLayout="@layout/headerfile"
         app:menu="@menu/sidemenu"
         android:layout_gravity="start"/>
@@ -25,6 +25,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:layout_width="190dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="-30dp"
+            android:background="@drawable/ovalshape"
+            android:rotation="50"
+            android:text="">
+
+        </androidx.constraintlayout.utils.widget.MotionLabel>
+
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:layout_width="190dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="-80dp"
+            android:background="@drawable/ovalshape"
+            android:rotation="50"
+            android:text=""/>
 
         <ScrollView
             android:layout_width="match_parent"

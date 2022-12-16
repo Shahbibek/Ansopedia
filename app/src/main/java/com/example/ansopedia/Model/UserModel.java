@@ -10,7 +10,7 @@ public class UserModel {
     private String firstName;
     private String lastName;
     private String middleName;
-    private String dob;
+//    private String dob;
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
@@ -32,12 +32,12 @@ public class UserModel {
         this.middleName = middleName;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
+//    public void setDob(String dob) {
+//        this.dob = dob;
+//    }
 
 
-    public UserModel(int id, String userName, String email, String displayName, String isVerified, String firstName, String lastName, String middleName, String dob) {
+    public UserModel(int id, String userName, String email, String displayName, String isVerified, String firstName, String lastName, String middleName) {
         this.id = id;
         this.userName = userName;
         this.email = email;
@@ -46,7 +46,7 @@ public class UserModel {
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
-        this.dob = dob;
+
     }
 
     public String getDisplayName() {
@@ -69,9 +69,9 @@ public class UserModel {
         return middleName;
     }
 
-    public String getDob() {
-        return dob;
-    }
+//    public String getDob() {
+//        return dob;
+//    }
 //    "id": "1",
 //        "username": "sanjay",
 //        "email": "ssah007@gmail.com",

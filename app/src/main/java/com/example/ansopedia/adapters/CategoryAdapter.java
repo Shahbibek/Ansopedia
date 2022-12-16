@@ -17,13 +17,14 @@ import com.example.ansopedia.databinding.ItemCategoriesBinding;
 import com.example.ansopedia.models.CategoriesModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
     private Context context;
-    private ArrayList<CategoriesModel> arrayList;
+    private List<CategoriesModel> arrayList;
 
-    public CategoryAdapter(Context context, ArrayList<CategoriesModel> arrayList) {
+    public CategoryAdapter(Context context, List<CategoriesModel> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }

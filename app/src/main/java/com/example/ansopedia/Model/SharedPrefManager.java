@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
+import com.example.ansopedia.MainActivity;
 import com.example.ansopedia.SignInActivity;
 
 import retrofit2.Call;
@@ -54,7 +55,7 @@ public class SharedPrefManager {
         editor.putString(KEY_LASTNAME, user.getLastName());
         editor.putString(KEY_DISPLAYNAME, user.getDisplayName());
         editor.putString(KEY_ISVERIFIED, user.getIsVerified());
-        editor.putString(KEY_DOB, user.getDob());
+//        editor.putString(KEY_DOB, user.getDob());
         editor.apply();
     }
 
@@ -75,8 +76,8 @@ public class SharedPrefManager {
                 sharedPreferences.getString(KEY_ISVERIFIED, null),
                 sharedPreferences.getString(KEY_FIRSTNAME, null),
                 sharedPreferences.getString(KEY_LASTNAME, null),
-                sharedPreferences.getString(KEY_MIDDLENAME, null),
-                sharedPreferences.getString(KEY_DOB, null)
+                sharedPreferences.getString(KEY_MIDDLENAME, null)
+
             );
     }
 
