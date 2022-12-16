@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -60,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
 
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            startActivity(new Intent(this, SignInActivity.class));
+            finish();
+        }
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerlayout,binding.toolbar,R.string.navigation_open,R.string.navigation_close);
 
         binding.drawerlayout.addDrawerListener(toggle);
@@ -93,12 +99,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initSlider() {
-        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80","Try Now"));
-        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80","Try Now"));
-        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80","Try Now"));
-        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80","Try Now"));
-        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80","Try Now"));
-        binding.carousel.addData(new CarouselItem("https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1939&q=80","Try Now"));
+        binding.carousel.addData(new CarouselItem("https://ansopedia.com/wp-content/uploads/2022/12/banner_1.png","Try Now"));
+        binding.carousel.addData(new CarouselItem("https://ansopedia.com/wp-content/uploads/2022/12/banner_2.png","Try Now"));
+
 
     }
 
@@ -107,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         categoryAdapter = new CategoryAdapter(this,categorieslist);
 
 
-        categorieslist.add(new CategoriesModel("Java","https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.subpng.com%2Fpng-97d0au%2F&psig=AOvVaw2JdvGx8n88sstjL3vSjIws&ust=1671128462601000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCND5z-Tc-fsCFQAAAAAdAAAAABAK","#ffffff","good",1));
+//        categorieslist.add(new CategoriesModel(3, 2, "Sanjay", "This is java Sanjay", "https://spng.pngfind.com/pngs/s/74-744402_java-logo-png-transparent-svg-vector-freebie-supply.png","#f6f6f6"));
         getCategories();
         GridLayoutManager layoutManager = new GridLayoutManager(this,3);
         binding.categoriesList.setLayoutManager(layoutManager);
@@ -116,21 +119,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void getCategories() {
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL+"?groupId=2", new Response.Listener<String>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject mainObj = new JSONObject(response);
                     // if(mainObj.getString("status").equals("success")){
-                    JSONArray jsonArray = mainObj.getJSONArray("categories");
+                    JSONArray jsonArray = mainObj.getJSONArray("user");
                     for (int i = 0;i<jsonArray.length();i++){
                         JSONObject object = jsonArray.getJSONObject(i);
                         CategoriesModel category = new CategoriesModel(
-                                object.getString("name"),
-                                Constants.CATEGORIES_IMAGE_URL+ object.getString("icon"),
-                                object.getString("color"),
-                                object.getString("brief"),
-                                object.getInt("id")
+                                object.getInt("id"),
+                                object.getInt("parent_id"),
+                                object.getString("content"),
+                                object.getString("short_desc"),
+                                object.getString("image_url"),
+                                object.getString("color")
                         );
                         categorieslist.add(category);
                     }

@@ -37,7 +37,7 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
         CategoryDetailsModel categoryDetailsModel = categoryDetailsModelArrayList.get(position);
 //        holder.bindings.topiclists
 
-        holder.topicText.setText(categoryDetailsModel.getTopicName());
+        holder.topicText.setText(categoryDetailsModel.getContent());
         holder.itemView.setOnClickListener(c->{
 
         });

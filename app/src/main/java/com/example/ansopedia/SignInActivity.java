@@ -112,9 +112,9 @@ public class SignInActivity extends AppCompatActivity {
 
                 try {
                     //converting response to json object
-//                    Toast.makeText(SignInActivity.this, "Inside try", Toast.LENGTH_SHORT).show();
 
                     JSONObject obj = new JSONObject(s);
+//                    Toast.makeText(SignInActivity.this, "Inside try", Toast.LENGTH_SHORT).show();
                     if(obj.getInt("success") == 1){
 //                        Toast.makeText(SignInActivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
                         //getting the user from the response
@@ -155,8 +155,8 @@ public class SignInActivity extends AppCompatActivity {
                         );
 //
 //                        //storing the user in shared preferences
-                        Toast.makeText(SignInActivity.this,  user.getFirstName(), Toast.LENGTH_SHORT).show();
-                        Toast.makeText(SignInActivity.this,  user.getLastName(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(SignInActivity.this,  user.getFirstName(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(SignInActivity.this,  user.getLastName(), Toast.LENGTH_SHORT).show();
                         SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
                         //starting the profile activity
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
