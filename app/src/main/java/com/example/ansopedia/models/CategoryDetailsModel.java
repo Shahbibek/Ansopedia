@@ -1,28 +1,30 @@
 package com.example.ansopedia.models;
 
 public class CategoryDetailsModel {
-    String topicName;
-    int id;
-
-    public CategoryDetailsModel(){}
-    public CategoryDetailsModel(String topicName, int id) {
-        this.topicName = topicName;
+    private int id, parent_id;
+    private String content, short_desc;
+    public CategoryDetailsModel(int id, int parent_id, String content, String desc) {
         this.id = id;
-    }
+        this.parent_id = parent_id;
+        this.content = content;
+        this.short_desc = desc;
 
-    public String getTopicName() {
-        return topicName;
     }
-
-    public void setTopicName(String topicName) {
-        this.topicName = topicName;
-    }
-
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getParent_id() {
+        return parent_id;
     }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getDesc() {
+        return short_desc;
+    }
+
+
 }

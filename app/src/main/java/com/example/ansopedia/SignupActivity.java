@@ -143,7 +143,7 @@ public class SignupActivity extends AppCompatActivity {
                     //converting response to json object
                     //############################## Not working from here ###################################
                     JSONObject obj = new JSONObject(s);
-                    Toast.makeText(SignupActivity.this, "Inside try", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SignupActivity.this, "Inside try", Toast.LENGTH_SHORT).show();
                     //if no error in response
                     if (obj.getInt("success") == 1) {
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
