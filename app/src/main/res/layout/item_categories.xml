@@ -7,12 +7,11 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/catcard"
+        android:id="@+id/catcards"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
         android:elevation="11dp"
-        app:cardBackgroundColor="@color/price_color"
         app:cardCornerRadius="11dp"
         android:layout_margin="11dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,9 +20,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/catcard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
+            android:background="@color/price_color"
             android:layout_centerVertical="true">
 
             <ImageView
@@ -57,6 +58,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catcard" />
+        app:layout_constraintTop_toBottomOf="@+id/catcards" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
