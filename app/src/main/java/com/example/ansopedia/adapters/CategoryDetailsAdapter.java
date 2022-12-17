@@ -1,6 +1,7 @@
 package com.example.ansopedia.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ansopedia.CategoryDetailsActivity;
+import com.example.ansopedia.QuizActivity;
 import com.example.ansopedia.R;
 import com.example.ansopedia.models.CategoryDetailsModel;
 
@@ -39,6 +42,10 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
 
         holder.topicText.setText(categoryDetailsModel.getContent());
         holder.itemView.setOnClickListener(c->{
+            Intent intent = new Intent(context, QuizActivity.class);
+            intent.putExtra("title",categoryDetailsModel.getContent());
+            intent.putExtra("id",""+categoryDetailsModel.getId());
+            context.startActivity(intent);
 
         });
     }

@@ -73,7 +73,7 @@
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_baseline_avatar"
                     android:tint="@color/black"
-                    app:shapeAppearance="@style/rank1imageview"
+                    app:shapeAppearance="@style/dp"
                     app:strokeColor="@color/primary"
                     app:strokeWidth="2dp" />
 
