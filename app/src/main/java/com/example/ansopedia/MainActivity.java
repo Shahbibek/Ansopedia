@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
                 SharedPrefManager.getInstance(getApplicationContext()).logout();
             }
         });
+        String id = "2";       //To change this value can change the content in the recycler view
         initSlider();
-        intitCategories();
+        intitCategories(id);
         intitSubjects();
     }
 
@@ -87,12 +90,8 @@ public class MainActivity extends AppCompatActivity {
         tabsModelArrayList = new ArrayList<>();
         tabsAdapter = new TabsAdapter(getApplicationContext(),tabsModelArrayList);
 
-        tabsModelArrayList.add(new TabsModel("Programming",1));
-        tabsModelArrayList.add(new TabsModel("Puzzles",2));
-        tabsModelArrayList.add(new TabsModel("Aptitude",3));
-        tabsModelArrayList.add(new TabsModel("GK",4));
-        tabsModelArrayList.add(new TabsModel("Interview",5));
-
+//        tabsModelArrayList.add(new TabsModel(1, "Programming"));
+        getTabsContent();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         binding.subjects.setLayoutManager(layoutManager);
         binding.subjects.setAdapter(tabsAdapter);
@@ -101,25 +100,21 @@ public class MainActivity extends AppCompatActivity {
     private void initSlider() {
         binding.carousel.addData(new CarouselItem("https://ansopedia.com/wp-content/uploads/2022/12/banner_1.png","Try Now"));
         binding.carousel.addData(new CarouselItem("https://ansopedia.com/wp-content/uploads/2022/12/banner_2.png","Try Now"));
-
-
     }
 
-    private void intitCategories() {
+    private void intitCategories(String id) {
         categorieslist = new ArrayList<>();
         categoryAdapter = new CategoryAdapter(this,categorieslist);
-
-
 //        categorieslist.add(new CategoriesModel(3, 2, "Sanjay", "This is java Sanjay", "https://spng.pngfind.com/pngs/s/74-744402_java-logo-png-transparent-svg-vector-freebie-supply.png","#f6f6f6"));
-        getCategories();
+        getCategories(id);
         GridLayoutManager layoutManager = new GridLayoutManager(this,3);
         binding.categoriesList.setLayoutManager(layoutManager);
         binding.categoriesList.setAdapter(categoryAdapter);
     }
 
-    private void getCategories() {
+    private void getCategories(String id) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL+"?groupId=2", new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL+"?groupId="+id, new Response.Listener<String>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(String response) {
@@ -157,4 +152,42 @@ public class MainActivity extends AppCompatActivity {
         queue.add(request);
 
     }
+
+    private void getTabsContent() {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_CATEGORIES_URL+"?groupId=0", new Response.Listener<String>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject mainObj = new JSONObject(response);
+                    // if(mainObj.getString("status").equals("success")){
+                    JSONArray jsonArray = mainObj.getJSONArray("user");
+                    for (int i = 0;i<jsonArray.length();i++){
+                        JSONObject object = jsonArray.getJSONObject(i);
+                        TabsModel category = new TabsModel(
+                                object.getInt("id"),
+                                object.getString("content")
+                        );
+                        tabsModelArrayList.add(category);
+                    }
+                    tabsAdapter.notifyDataSetChanged();
+                    //}
+//                    else{
+//
+//                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queue.add(request);
+
+    }
+
 }

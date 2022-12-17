@@ -1,14 +1,18 @@
 package com.example.ansopedia.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ansopedia.CategoryDetailsActivity;
+import com.example.ansopedia.MainActivity;
 import com.example.ansopedia.R;
 import com.example.ansopedia.databinding.ItemTabsBinding;
 import com.example.ansopedia.models.TabsModel;
@@ -35,7 +39,7 @@ public class TabsAdapter extends RecyclerView.Adapter<TabsAdapter.TabsViewHolder
     @Override
     public void onBindViewHolder(@NonNull TabsViewHolder holder, int position) {
         TabsModel tabsModel = tabsModelArrayList.get(position);
-        holder.binding.tabText.setText(tabsModel.getTabName());
+        holder.binding.tabText.setText(tabsModel.getContent());
         holder.itemView.setOnClickListener(c->{
             holder.binding.tabText.setTextColor(Color.parseColor("#00FF00"));
 

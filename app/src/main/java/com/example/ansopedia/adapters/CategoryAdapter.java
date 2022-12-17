@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -58,7 +59,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         // Picasso.get().load(productModelArrayList.get(position).getImage()).resize(100,100).into(holder.imageProduct);
         Picasso.get().load(arrayList.get(position).getImage_url()).resize(100,100).into(holder.catIcon);
 //        Picasso.get().load(arrayList.get(position).getColor()).into(holder.catIcon);
-        holder.catCard.setBackgroundColor(Color.parseColor(categoriesModel.getColor()));
+        if(categoriesModel.getColor().isEmpty()){
+
+        }else{
+            holder.catCard.setBackgroundColor(Color.parseColor(categoriesModel.getColor()));
+        }
 
         holder.itemView.setOnClickListener(c->{
             Intent intent = new Intent(context, CategoryDetailsActivity.class);
@@ -80,7 +85,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public class CategoryHolder extends RecyclerView.ViewHolder{
         TextView txtCategoryTitle;
         ImageView catIcon;
-        CardView catCard;
+        ConstraintLayout catCard;
 
 
         public CategoryHolder(@NonNull View itemView) {
