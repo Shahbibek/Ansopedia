@@ -35,7 +35,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         TextView textViewForgetPassword = findViewById(R.id.textViewForgetPassword);
         TextView textViewSignUp = findViewById(R.id.textViewSignUp);
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.helper.widget.Carousel;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -73,7 +74,31 @@ public class MainActivity extends AppCompatActivity {
         binding.drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
 
-
+        binding.navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.navhome) {
+                    Toast.makeText(MainActivity.this, "Home is Clicked", Toast.LENGTH_SHORT).show();
+                    binding.drawerlayout.closeDrawer(GravityCompat.START);
+                } else if (item.getItemId() == R.id.navprofile) {
+                    startActivity(new Intent(MainActivity.this, MyProfileActivity.class));
+                    binding.drawerlayout.closeDrawer(GravityCompat.START);
+                } else if (item.getItemId() == R.id.course) {
+                    Toast.makeText(MainActivity.this, "Course is Clicked", Toast.LENGTH_SHORT).show();
+                    binding.drawerlayout.closeDrawer(GravityCompat.START);
+                } else if (item.getItemId() == R.id.logout) {
+                    Toast.makeText(MainActivity.this, "Logout is Clicked", Toast.LENGTH_SHORT).show();
+                    binding.drawerlayout.closeDrawer(GravityCompat.START);
+                } else if (item.getItemId() == R.id.share) {
+                    Toast.makeText(MainActivity.this, "Share is Clicked", Toast.LENGTH_SHORT).show();
+                    binding.drawerlayout.closeDrawer(GravityCompat.START);
+                } else if (item.getItemId() == R.id.aboutus) {
+                    startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+                    binding.drawerlayout.closeDrawer(GravityCompat.START);
+                }
+                return true;
+            }
+        });
         binding.home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
