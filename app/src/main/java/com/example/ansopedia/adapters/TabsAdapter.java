@@ -41,7 +41,7 @@ public class TabsAdapter extends RecyclerView.Adapter<TabsAdapter.TabsViewHolder
         TabsModel tabsModel = tabsModelArrayList.get(position);
         holder.binding.tabText.setText(tabsModel.getContent());
         holder.itemView.setOnClickListener(c->{
-            holder.binding.tabText.setTextColor(Color.parseColor("#00FF00"));
+            holder.binding.tabText.setTextColor(Color.parseColor("#E08600"));
 
         });
     }

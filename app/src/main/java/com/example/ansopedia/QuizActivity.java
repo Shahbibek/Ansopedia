@@ -62,7 +62,7 @@ public class QuizActivity extends AppCompatActivity {
     private void inItQuestions(String id) {
         questionList = new ArrayList<>();
         questionsAdapter = new QuestionsAdapter(this,questionList);
-//        categorieslist.add(new CategoriesModel(3, 2, "Sanjay", "This is java Sanjay", "https://spng.pngfind.com/pngs/s/74-744402_java-logo-png-transparent-svg-vector-freebie-supply.png","#f6f6f6"));
+//        categoriesList.add(new CategoriesModel(3, 2, "Sanjay", "This is java Sanjay", "https://spng.pngfind.com/pngs/s/74-744402_java-logo-png-transparent-svg-vector-freebie-supply.png","#f6f6f6"));
         getQuestions(id);
         GridLayoutManager layoutManager = new GridLayoutManager(this,3);
 //        binding.categoriesList.setLayoutManager(layoutManager);

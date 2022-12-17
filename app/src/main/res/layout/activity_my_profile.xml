@@ -151,6 +151,7 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/leadershipBoard"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="15dp"
@@ -165,7 +166,7 @@
                     android:background="@drawable/leaderboard_icon" />
 
                 <TextView
-                    android:id="@+id/leadershipBoard"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -177,7 +178,9 @@
 
 
 
-            </LinearLayout><LinearLayout
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/badges"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="15dp"
@@ -192,7 +195,6 @@
                     android:background="@drawable/badge_icon" />
 
                 <TextView
-                    android:id="@+id/badges"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -205,6 +207,7 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/notes"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="15dp"
@@ -220,7 +223,6 @@
                     android:background="@drawable/note_icon" />
 
                 <TextView
-                    android:id="@+id/notes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -262,6 +264,7 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/editProfile"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="15dp"
@@ -275,7 +278,6 @@
                     android:background="@drawable/edit_profile_icon" />
 
                 <TextView
-                    android:id="@+id/editProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -298,7 +300,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp">
+                >
 
                 <View
                     android:layout_width="24dp"
@@ -320,6 +322,13 @@
 
 
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_color"
+                android:layout_marginHorizontal="20dp"/>
+
+
 
 
         </LinearLayout>

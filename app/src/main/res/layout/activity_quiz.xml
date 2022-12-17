@@ -62,6 +62,11 @@
                 app:titleTextColor="@color/white"
                 tools:ignore="MissingConstraints" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/questionsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +132,7 @@
                                 android:id="@+id/srnoquestion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1. "
+                                android:text="1."
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -135,11 +140,11 @@
 
                             <TextView
                                 android:id="@+id/quiz_questions"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:gravity="left"
-                                android:layout_marginLeft="10dp"
+                                android:gravity="start"
+                                android:layout_marginStart="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:text="What is the data type?"
                                 android:textColor="@color/black"

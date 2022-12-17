@@ -8,14 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ansopedia.Model.SharedPrefManager;
 import com.example.ansopedia.Model.UserModel;
 
 public class MyProfileActivity extends AppCompatActivity {
     private TextView tvUserName, tvUserEmail;
-    private Button btnLogout;
-    private LinearLayout llEditSetting;
+    private Button logoutButton;
+    private LinearLayout leadershipBoard, badges, notes, editProfile, llEditSetting;
     UserModel userModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class MyProfileActivity extends AppCompatActivity {
         tvUserName.setText(userModel.getUserName());
         tvUserEmail.setText(userModel.getEmail());
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPrefManager.getInstance(MyProfileActivity.this).logout();
@@ -40,12 +41,42 @@ public class MyProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
+        leadershipBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MyProfileActivity.this,LeaderboardActivity.class));
+            }
+        });
+        badges.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MyProfileActivity.this, BadgeActivity.class));
+            }
+        });
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MyProfileActivity.this, EditProfileActivity.class));
+            }
+        });
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MyProfileActivity.this, "Notes Coming Soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
+
     }
 
     private void intiViews() {
         tvUserName = findViewById(R.id.userName);
         tvUserEmail = findViewById(R.id.userEmail);
-        btnLogout = findViewById(R.id.logoutButton);
+        logoutButton = findViewById(R.id.logoutButton);
         llEditSetting = findViewById(R.id.llEditSetting);
+        leadershipBoard = findViewById(R.id.leadershipBoard);
+        badges = findViewById(R.id.badges);
+        notes = findViewById(R.id.notes);
+        editProfile = findViewById(R.id.editProfile);
     }
 }
