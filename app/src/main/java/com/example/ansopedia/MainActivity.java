@@ -99,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        binding.home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPrefManager.getInstance(getApplicationContext()).logout();
-            }
-        });
+//        binding.home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SharedPrefManager.getInstance(getApplicationContext()).logout();
+//            }
+//        });
         String id = "2";       //To change this value can change the content in the recycler view
         initSlider();
         intitCategories(id);
