@@ -37,8 +37,8 @@
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/ansopedia_logo"
                 android:layout_marginTop="70dp"
+                android:src="@drawable/ansopedia_logo"
                 app:layout_constraintBottom_toTopOf="@+id/__p__sign_in"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
